@@ -1,6 +1,8 @@
-from unittest import  TestCase
+from unittest import TestCase
 import unittest
+
 from LogicForTest import Runner, Tournament
+
 
 class TournamentTest(TestCase):
 
@@ -45,7 +47,7 @@ class TournamentTest(TestCase):
         self.all_results["third_test"] = runners
         self.assertEqual(Runner(finishers[3]).name, "Ник")
 
-    def testTournament4(self): # less test for Andrey
+    def testTournament4(self):  # less test for Andrey
         tournament = Tournament(8, self.Andrey, self.Usain, self.Nick)
         finishers = tournament.start()
         runners = {}
@@ -54,7 +56,7 @@ class TournamentTest(TestCase):
         self.all_results["forth_test"] = runners
         self.assertEqual(Runner(finishers[3]).name, "Ник")
 
-    def testTournament5(self): # bound test for Andrey
+    def testTournament5(self):  # bound test for Andrey
         tournament = Tournament(9, self.Nick, self.Andrey, self.Usain)
         finishers = tournament.start()
         runners = {}
@@ -63,7 +65,7 @@ class TournamentTest(TestCase):
         self.all_results["fifth_test"] = runners
         self.assertEqual(Runner(finishers[3]).name, "Ник")
 
-    def testTournament6(self): #less test for nick
+    def testTournament6(self):  #less test for nick
         tournament = Tournament(2, self.Nick, self.Andrey, self.Usain)
         finishers = tournament.start()
         runners = {}
@@ -72,7 +74,7 @@ class TournamentTest(TestCase):
         self.all_results["sixth_test"] = runners
         self.assertEqual(Runner(finishers[3]).name, "Ник")
 
-    def testTournament7(self): # bound test for nick
+    def testTournament7(self):  # bound test for nick
         tournament = Tournament(3, self.Nick, self.Andrey, self.Usain)
         finishers = tournament.start()
         runners = {}
@@ -80,6 +82,7 @@ class TournamentTest(TestCase):
             runners[position] = str(Runner(finisher).name)
         self.all_results["seventh_test"] = runners
         self.assertEqual(Runner(finishers[3]).name, "Ник")
+
 
 if __name__ == "__main__":
     unittest.main()
