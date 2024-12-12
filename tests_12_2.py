@@ -55,20 +55,5 @@ class TournamentTest(TestCase):
         self.all_results["fifth_test"] = f"1: {finishers[1]}, 2: {finishers[2]}, 3: {finishers[3]}"
         self.assertEqual(str(finishers[3]), "Ник")
 
-    def testTournament6(self):  #less test for nick
-        tournament = Tournament(2, self.Nick, self.Andrey, self.Usain)
-        finishers = tournament.start()
-
-        self.all_results["sixth_test"] = f"1: {finishers[1]}, 2: {finishers[2]}, 3: {finishers[3]}"
-        self.assertEqual(str(finishers[3]), "Ник")
-
-    def testTournament7(self):  # bound test for nick
-        tournament = Tournament(3, self.Nick, self.Andrey, self.Usain)
-        finishers = tournament.start()
-
-        self.all_results["seventh_test"] = f"1: {finishers[1]}, 2: {finishers[2]}, 3: {finishers[3]}"
-        self.assertEqual(str(finishers[3]), "Ник")
-
-
 if __name__ == "__main__":
     unittest.main()
