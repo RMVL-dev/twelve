@@ -27,19 +27,17 @@ class Tournament:
     def __init__(self, distance, *participants):
         self.full_distance = distance
         self.participants = list(participants)
+        self.participants.sort(key=lambda r: r.speed, reverse=True)
 
     def start(self):
         finishers = {}
         place = 1
 
         while len(self.participants) != len(finishers): ## new
-            self.participants = sorted(self.participants, key=lambda runner: runner.speed)
-            self.participants.reverse()
             for participant in self.participants:
                 participant.run()
                 if participant.distance >= self.full_distance and not participant in finishers.values(): ## new
                     finishers[place] = participant
                     place += 1
-                    #self.participants.remove(participant)
 
         return finishers
